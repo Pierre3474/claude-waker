@@ -1,0 +1,11 @@
+[Unit]
+Description=Claude waker (account %i) - open 5h usage window
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/claude-waker.sh %i
+User=claude
+Group=claude
+Nice=10
